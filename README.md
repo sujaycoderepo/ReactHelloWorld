@@ -1,11 +1,3 @@
-### CSS Resource : https://semantic-ui.com/
-1. Comment CSS
-
-### used fake data from https://github.com/marak/Faker.js/
-
-
-### ======= React Code 
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
