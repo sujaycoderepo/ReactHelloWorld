@@ -2,19 +2,34 @@ import React from 'react'
 import ReactDom from 'react-dom'
 
 class App extends React.Component{
-    constructor(props){
-        super(props);
-        this.state = { lat : null, errorMessage : ""};
+    
+    //// CODE REFACTORING !!!!! 
+    //// Remove constructor and replace with apropreate structure 
+    // constructor(props){
+    //     super(props);
+    //     this.state = { lat : null, errorMessage : ""};
 
+    //     window.navigator.geolocation.getCurrentPosition(
+    //         position => {
+    //             this.setState( {lat : position.coords.latitude} );
+    //         },
+    //         error => {
+    //             this.setState( {errorMessage : error.message});
+    //         }
+    //     );
+    // }
+
+    //// No need to write it in constructor. 
+    //// Babel.js internally converts it to required form like constructor 
+    state = {lat : null, errorMessage : ""};
+
+    componentDidMount(){
         window.navigator.geolocation.getCurrentPosition(
-            position => {
-                this.setState( {lat : position.coords.latitude} );
-            },
-            error => {
-                this.setState( {errorMessage : error.message});
-            }
-        );
+            position => this.setState({lat : position.coords.latitude}),
+            error => this.setState({errorMessage : error.message})
+        )
     }
+    
     render(){
 
         // window.navigator.geolocation.getCurrentPosition(
