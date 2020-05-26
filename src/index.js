@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDom from 'react-dom'
+import SeasonDisply from './seasonDisply'
 
 class App extends React.Component{
     
@@ -40,14 +41,14 @@ class App extends React.Component{
         console.log(this.state.errorMessage);
 
         if(this.state.errorMessage && !this.state.lat){
-            return(<div>Error: {this.state.errorMessage}</div>)
+            return(<div>Error: {this.state.errorMessage}</div>);
         }
 
         if(!this.state.errorMessage && this.state.lat){
-            return(<div>Latitude: {this.state.lat}</div>)
+            return(<SeasonDisply lat = {this.state.lat}/>);
         }
 
-        return(<div>Loading ......</div>)
+        return(<div>Loading ......</div>);
     }
 }
 
