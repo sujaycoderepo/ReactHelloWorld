@@ -32,3 +32,8 @@
 .summar{
     background-color: orange;
 }
+
+.parentClass{
+    border: solid;
+    border-color: red;
+}

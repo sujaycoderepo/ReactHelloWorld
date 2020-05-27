@@ -32,15 +32,8 @@ class App extends React.Component{
         )
     }
     
-    render(){
-
-        // window.navigator.geolocation.getCurrentPosition(
-        //     position => console.log(position),
-        //     error => console.log(error)
-        // );
-        console.log(this.state.lat);
-        console.log(this.state.errorMessage);
-
+    ////Helper function to centralize rendering logic
+    renderContent(){
         if(this.state.errorMessage && !this.state.lat){
             return(<div>Error: {this.state.errorMessage}</div>);
         }
@@ -50,6 +43,26 @@ class App extends React.Component{
         }
 
         return(<Spinner message="Please accept loaction request."/>);
+    } 
+
+    render(){
+
+        // window.navigator.geolocation.getCurrentPosition(
+        //     position => console.log(position),
+        //     error => console.log(error)
+        // );
+        console.log(this.state.lat);
+        console.log(this.state.errorMessage);
+
+        return(
+            <div>
+                <div className={`parentClass`}>
+                    {this.renderContent()}
+                </div>
+            </div>
+            
+        );
+        
     }
 }
 
