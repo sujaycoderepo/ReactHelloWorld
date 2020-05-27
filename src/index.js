@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import SeasonDisply from './seasonDisply'
+import SeasonDisply from './seasonDisplay'
+import Spinner from './spinner'
 
 class App extends React.Component{
     
@@ -48,7 +49,7 @@ class App extends React.Component{
             return(<SeasonDisply lat = {this.state.lat}/>);
         }
 
-        return(<div>Loading ......</div>);
+        return(<Spinner message="Please accept loaction request."/>);
     }
 }
 
