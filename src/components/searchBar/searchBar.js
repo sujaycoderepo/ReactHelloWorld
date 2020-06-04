@@ -4,14 +4,24 @@ class searchBar extends React.Component{
 
     state = {term:'Hello '};
 
+    // constructor(props){
+    //     super(props);
+    //     this.onFormSubmit = this.onFormSubmit.bind(this);
+    //     this.props.onSubmit();
+    // }
+
     onInputChanged(event){
         console.log(event.target.value);
     }
 
+    // onFormSubmit(event){
+    //     console.log('Text');
+    // }
+
     render(){
         return(
             <div className="ui segment">
-                <div className="ui form">
+                <form onSubmit = {(event) => {console.log('Submited')}} className="ui form">
                     <div className="field">
                         <label>Image URL</label>
                         <input type="text" 
@@ -22,7 +32,7 @@ class searchBar extends React.Component{
                         <label>Image URL</label>
                         <input type="text" onChange = {(event) => console.log(event.target.value)}></input>
                     </div>
-                 </div>
+                 </form>
             </div>
         )
     }
